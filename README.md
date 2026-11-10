@@ -1,5 +1,7 @@
 # AI 竞赛导航 (ai-arena)
 
+**线上地址：<http://ai.moonstack.org>**（HTTPS 证书由 GitHub 自动签发中，就绪后直接可用 https 访问；`Settings → Pages → Enforce HTTPS` 可勾选强制加密跳转）
+
 自动采集 + 自动更新的 AI 竞赛导航站。每天定时抓取在途奖金赛,渲染成单页 HTML,托管到 GitHub Pages 后全网可访问。
 
 ## 当前自动采集源
@@ -53,7 +55,8 @@ gh api -X POST repos/{owner}/ai-arena/pages -f "source[branch]=main" -f "source[
 - **人工源**: 让 AI 更新 `curated.json`(windows 字段=在途窗口, 过期自动隐藏; watch=避坑清单; calendar=未来日历), 提交 push 后下次自动生效。
 - **注意事项**:
   - GitHub 定时任务在仓库连续 60 天无活动后会暂停,偶尔手动触发一次即可;
-  - 不要把已备案的域名(如 jinshisec.com)绑到 GitHub Pages——备案域名指向境外服务器可能被管局注销备案,用默认 `*.github.io` 地址即可;
+  - 当前 git 凭据的 token 无 `workflow` scope:改 `.github/workflows/update.yml` 时 push 会被拒,需走网页编辑或换带 workflow scope 的授权;普通文件(index.html/curated.json 等)push 不受影响;
+  - 不要把已备案的域名(如 jinshisec.com)绑到 GitHub Pages——备案域名指向境外服务器可能被管局注销备案,moonstack.org 无备案包袱,随便绑子域;
   - 国内直连访问 GitHub Pages 偶尔不稳,访问不了就挂梯子。
 
 ## 阅读口径
