@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 竞赛导航 · 自动更新</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2307090d'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='%2300e5ff' font-family='monospace'%3E%CE%9E%3C/text%3E%3C/svg%3E">
+<style>
+:root{--bg:#07090d;--panel:#0d1117;--panel2:#11161d;--line:#1e2733;--cyan:#00e5ff;
+--mag:#ff2d78;--amber:#ffb300;--green:#00ff9d;--dim:#8b98a8;--txt:#d7dee8;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:"Microsoft YaHei","PingFang SC",sans-serif;font-size:14px;line-height:1.65;padding:24px 12px 70px}
+a{color:var(--cyan);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1180px;margin:0 auto}
+header{border:1px solid var(--line);border-left:3px solid var(--cyan);
+background:linear-gradient(90deg,rgba(0,229,255,.06),transparent 60%);padding:20px 24px;margin-bottom:16px}
+h1{font-size:21px;color:var(--cyan);letter-spacing:1px;font-family:Consolas,"Microsoft YaHei",monospace;margin-bottom:4px}
+h2{font-size:16px;color:var(--mag);letter-spacing:1px;margin:26px 0 10px;padding-left:10px;border-left:3px solid var(--mag);font-family:Consolas,"Microsoft YaHei",monospace}
+.meta{color:var(--dim);font-size:12px}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 2px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:8px 14px;min-width:120px}
+.stat b{color:var(--cyan);font-family:Consolas,monospace;font-size:18px;display:block}
+.stat span{color:var(--dim);font-size:12px}
+table{width:100%;border-collapse:collapse;background:var(--panel);font-size:13px}
+th{background:var(--panel2);color:var(--cyan);text-align:left;padding:8px 10px;border:1px solid var(--line);white-space:nowrap}
+td{padding:7px 10px;border:1px solid var(--line);vertical-align:top}
+tr:hover td{background:rgba(0,229,255,.04)}
+.tag{display:inline-block;padding:1px 8px;border-radius:2px;font-size:11px;margin:0 3px 3px 0;white-space:nowrap}
+.t-go{background:rgba(0,255,157,.12);color:var(--green);border:1px solid rgba(0,255,157,.4)}
+.t-mid{background:rgba(255,179,0,.12);color:var(--amber);border:1px solid rgba(255,179,0,.4)}
+.t-no{background:rgba(139,152,168,.12);color:var(--dim);border:1px solid rgba(139,152,168,.4)}
+.t-hot{background:rgba(255,45,120,.18);color:var(--mag);border:1px solid rgba(255,45,120,.5)}
+.urgent{color:var(--mag);font-weight:700;font-family:Consolas,monospace}
+.soon{color:var(--amber);font-family:Consolas,monospace}
+.far{color:var(--green);font-family:Consolas,monospace}
+.filters{margin:8px 0}
+.filters button{background:var(--panel);border:1px solid var(--line);color:var(--dim);padding:5px 14px;cursor:pointer;font-size:12px;margin-right:6px;border-radius:3px}
+.filters button.on{color:var(--cyan);border-color:var(--cyan)}
+.filters button:hover{color:var(--cyan)}
+.note{background:rgba(255,179,0,.07);border-left:3px solid var(--amber);padding:9px 13px;font-size:13px;color:#e8d5ad;margin:10px 0}
+.danger{background:rgba(255,45,120,.07);border-left:3px solid var(--mag);padding:9px 13px;font-size:13px;color:#f0b8cc;margin:10px 0}
+.small{color:var(--dim);font-size:12px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:12px 14px;margin-bottom:10px}
+.card h3{font-size:14px;color:var(--amber);margin-bottom:4px}
+.cal{border-left:2px solid var(--line);margin-left:8px;padding-left:18px}
+.cal-item{position:relative;margin-bottom:12px}
+.cal-item:before{content:"";position:absolute;left:-23px;top:6px;width:8px;height:8px;background:var(--cyan);border-radius:50%;box-shadow:0 0 8px var(--cyan)}
+.cal-item .m{font-family:Consolas,monospace;color:var(--amber);font-size:12px}
+footer{margin-top:32px;padding-top:14px;border-top:1px solid var(--line);color:var(--dim);font-size:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>[ AI 竞赛导航 ] // AUTO-UPDATED</h1>
+  <div class="meta">自动采集：Zindi API · DrivenData · DataFountain ｜ 人工情报更新于 2026-11-11 ｜
+  本页数据生成时间：<b>2026-11-11 07:36</b> ｜ <a href="#source-note" style="color:var(--amber)">来源与转载声明见页底</a></div>
+  <div class="stats">
+    <div class="stat"><b>7</b><span>自动源在途赛</span></div>
+    <div class="stat"><b>7</b><span>国内人工窗口</span></div>
+    <div class="stat"><b>2</b><span>自动源平台</span></div>
+  </div>
+</header>
+
+
+
+<h2>▍进行中 · 自动采集（公开榜优先 · 按截止日排序）</h2>
+<div class="filters"><button class="on" data-f="ALL">全部</button><button data-f="DrivenData">DrivenData</button><button data-f="Zindi">Zindi</button></div>
+<table id="live">
+<tr><th>比赛</th><th>平台</th><th>奖金</th><th>截止</th><th>已报名</th></tr>
+<tr data-p="DrivenData"><td><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/" target="_blank">The Geologic Enhanced Mapping System (GEMS) Prize Challenge</a><br><span class="small">公益数据科学赛 · 注意个别赛为美国联邦资助(如 American-Made 系列)需自查资格</span></td><td><b style="color:#ff2d78">DrivenData</b></td><td class="mono" style="font-family:Consolas">$300,000</td><td><span class="soon">2026-12-03 <small>(剩22天)</small></span></td><td>970</td></tr>
+<tr data-p="Zindi"><td><a href="https://zindi.africa/competitions/GenAI-for-Good-Challenge" target="_blank">GenAI for Good Challenge: Cities Edition (Phase 1 Technical Assessment)</a><br><span class="small">公开榜 · 规则页确认 Eligibility（个别赛限国别）</span></td><td><b style="color:#00e5ff">Zindi</b></td><td class="mono" style="font-family:Consolas">$40 000 USD</td><td><span class="soon">2026-12-13 <small>(剩32天)</small></span></td><td>385</td></tr>
+<tr data-p="Zindi"><td><a href="https://zindi.africa/competitions/french-embassy-underwater-vessel-noise-challenge" target="_blank">Underwater Vessel Noise Challenge by the French Embassy in South Africa</a><br><span class="small">公开榜 · 规则页确认 Eligibility（个别赛限国别）</span></td><td><b style="color:#00e5ff">Zindi</b></td><td class="mono" style="font-family:Consolas">$5 000 USD</td><td><span class="soon">2026-12-13 <small>(剩32天)</small></span></td><td>1059</td></tr>
+<tr data-p="Zindi"><td><a href="https://zindi.africa/competitions/telcoretrieve-challenge-unlocking-telco-knowledge" target="_blank">TelcoRetrieve Challenge: Unlocking Telco Knowledge</a><br><span class="small">公开榜 · 规则页确认 Eligibility（个别赛限国别）</span></td><td><b style="color:#00e5ff">Zindi</b></td><td class="mono" style="font-family:Consolas">$20 000 USD</td><td><span class="far">2027-01-13 <small>(剩63天)</small></span></td><td>39</td></tr>
+<tr data-p="Zindi"><td><a href="https://zindi.africa/competitions/amd-global-physical-ai-safety-challenge" target="_blank">AMD Global Physical AI Behavioral Safety Challenge</a><br><span class="small">公开榜 · 规则页确认 Eligibility（个别赛限国别）</span></td><td><b style="color:#00e5ff">Zindi</b></td><td class="mono" style="font-family:Consolas">$10 000 USD</td><td><span class="far">2027-01-31 <small>(剩81天)</small></span></td><td>236</td></tr>
+<tr data-p="Zindi"><td><a href="https://zindi.africa/competitions/ai-agents-for-ran-challenge" target="_blank">AI Agents for RAN Challenge</a><br><span class="small">公开榜 · 规则页确认 Eligibility（个别赛限国别）</span></td><td><b style="color:#00e5ff">Zindi</b></td><td class="mono" style="font-family:Consolas">€20 000 EUR</td><td><span class="far">2027-02-05 <small>(剩86天)</small></span></td><td>36</td></tr>
+<tr data-p="Zindi"><td><a href="https://zindi.africa/competitions/green-rising-methane-innovation-challenge" target="_blank">Green Rising Methane Innovation Challenge</a><br><span class="small">公开榜 · 规则页确认 Eligibility（个别赛限国别）</span></td><td><b style="color:#00e5ff">Zindi</b></td><td class="mono" style="font-family:Consolas">$10 000 USD</td><td><span class="far">2027-02-14 <small>(剩95天)</small></span></td><td>207</td></tr>
+</table>
+<p class="small">说明：Zindi 已报名数为注册数（实际认真参赛队伍远少于此）；报名前点开各赛 Rules 页确认 Eligibility；DrivenData 部分赛为美国联邦资助（American-Made 系列仅限美国主体）。</p>
+
+<h2>▍国内窗口 · 人工情报（公司主体可报）</h2>
+<div class="card"><h3><a href="https://ccf.org.cn/tec2026suzhou" target="_blank">TEC-AGI 2026 全国通用人工智能创新应用大赛 + CCF 科技创业大赛(TEC 2026)</a></h3><div class="small">截止：<span class="urgent">2026-11-15（剩4天）</span> ｜ 奖励：最高2000万政策支持 + 最高5000万场景订单（非现金奖励）</div><div style="margin:4px 0"><span class="t-go tag">公司主体</span><span class="t-go tag">投BP免费</span><span class="t-go tag">评审路演</span></div><div class="small">8大专项赛：AI+智能制造(苏州张家港)/生物医药(亳州，首批场景预算3580万)/工业制造(马鞍山)/生物制造(芜湖)等。CCF主办，公司主体报名合适。</div></div>
+<div class="card"><h3><a href="https://zhrsj.zhuhai.gov.cn/zw/zdlyxxgk/gzdt/content/post_3955717.html" target="_blank">2026 珠海人工智能 OPC 创业大赛（社会组）</a></h3><div class="small">截止：<span class="urgent">2026-11-20（剩9天）</span> ｜ 奖励：最高6万现金 + 500万创业担保贷款 + 300万算力券</div><div style="margin:4px 0"><span class="t-go tag">公司主体</span><span class="t-go tag">地域绑定珠海</span></div><div class="small">不限户籍地域，但需&#x27;有意向在珠海创业&#x27;。AI硬件/AI软件与智能体/AIGC三大方向，初赛12月上旬书面评审。</div></div>
+<div class="card"><h3><a href="https://www.163.com/dy/article/LBAD8SJU0511D3QS.html" target="_blank">魔搭 AI∞ 开发者创作大赛 · 第三期「AI 造游戏」</a></h3><div class="small">截止：<span class="t-mid tag">滚动报名 · 见官网</span> ｜ 奖励：最高15,000元现金 + 硬件设备</div><div style="margin:4px 0"><span class="t-go tag">AI游戏</span><span class="t-go tag">作品评审</span><span class="t-go tag">月度赛</span></div><div class="small">魔搭社区+Qoder+盛趣游戏联合发起。用AI创作原创游戏发布到魔搭创空间。11月初启动，每月一个主题，滚动开赛。</div></div>
+<div class="card"><h3><a href="https://mp.weixin.qq.com/s?__biz=MjM5NjUwNzg4Mg==&amp;mid=2702242671&amp;idx=2&amp;sn=92ed1e5a725c4ae3c8eb5f435898e630" target="_blank">2026 波克 AI 游戏创作大赛（BOKE NEW WAVE）</a></h3><div class="small">截止：<span class="t-mid tag">滚动报名 · 见官网</span> ｜ 奖励：入围30强每队最高6000元Token补贴 + 决赛奖金</div><div style="margin:4px 0"><span class="t-go tag">AI游戏</span><span class="t-go tag">文旅/教育题材</span><span class="t-go tag">青年向</span></div><div class="small">11月9日启动，上海线下决赛。作品评审制，波克城市主办。</div></div>
+<div class="card"><h3><a href="https://one.sipac.gov.cn/frzrk/ndaservplat/Apps/sme/index.php?s=/Activity/detail/activityid/3DED20CA-B7EA-92CD-253D-75410BACB779" target="_blank">2026 华为云 OPC 创意大赛</a></h3><div class="small">截止：<span class="t-mid tag">滚动报名 · 见官网</span> ｜ 奖励：算力券 + 全联接大会入场机会</div><div style="margin:4px 0"><span class="t-go tag">开放赛题</span><span class="t-go tag">一人公司友好</span></div><div class="small">以「OPC+AI工具」为核心做创意开发（AI原生应用/工具/智能体等），不设固定赛道，面向独立开发者和创业者。截止时间以官网为准。</div></div>
+<div class="card"><h3><a href="https://carc.hitsz.edu.cn/info/1022/3941.htm" target="_blank">第十一届全国青年人工智能创新创业大赛 ·「揭榜挂帅」专项赛</a></h3><div class="small">截止：<span class="t-mid tag">滚动报名 · 见官网</span> ｜ 奖励：奖金待核实（往届为现金+落地扶持）</div><div style="margin:4px 0"><span class="t-go tag">青年团队</span><span class="t-go tag">企业发榜</span></div><div class="small">11月6日发榜公告。面向高校学生团队+青年科技人才团队，面向企业真实需求揭榜打擂。奖金与年龄线需查官方细则。</div></div>
+<div class="card"><h3><a href="https://www.isc.org.cn/article/27706674351828992.html" target="_blank">2026「金灵光杯」中国互联网创新大赛（第三届）</a></h3><div class="small">截止：<span class="t-mid tag">滚动报名 · 见官网</span> ｜ 奖励：按专题赛设置（偏荣誉/资源）</div><div style="margin:4px 0"><span class="t-go tag">14专题</span><span class="t-go tag">公司可报</span><span class="t-go tag">方案申报</span></div><div class="small">中国互联网协会主办。专题：数据要素/AI+创新应用/算力/金融科技/车联网/6G-B6G无线通信AI等。年内评审。</div></div>
+
+<h2>▍永续长线</h2>
+<div class="card"><h3><a href="https://numer.ai" target="_blank">Numerai 众包量化锦标赛</a></h3><div class="small">奖励：每月以 NMR 代币发放（需质押参与）</div><div style="margin:4px 0"><span class="t-go tag">永续</span><span class="t-go tag">公开榜</span><span class="t-go tag">零GPU</span><span class="t-go tag">量化</span></div><div class="small">股市预测锦标赛，与 CrunchDAO 同构。练兵零成本；拿奖励需 stake NMR（预测差会被罚没），与零风险原则冲突，小注试水需自己拍板。</div></div>
+
+<h2>▍观察 / 避坑清单</h2>
+<div class="danger"><b><a href="https://arcprize.org" target="_blank">ARC Prize 2026</a></b> · 截止 2026-12-04<br>总奖金 $2,000,000 真实、公开榜真实，但 ARC-AGI 需海量 test-time 推理算力，且是全球顶尖实验室主战场——违反&#x27;GPU压力低&#x27;与&#x27;竞争平稳&#x27;两条硬标准，不建议投入。</div>
+<div class="danger"><b><a href="https://www.drivendata.org/competitions/306/" target="_blank">DrivenData · GEMS 地质制图挑战（$10万-30万级）</a></b> · 截止 2026-12-03<br>美国能源部(DOE) Office of Geothermal 资助的 American-Made 系列赛事，带联邦政府资质审查，大概率仅限美国公民/美国注册实体。中国大陆主体不建议投入。</div>
+<div class="danger"><b><a href="https://www.worldquant.com/iqc" target="_blank">WorldQuant IQC 2026（全球决赛 $20K/$12K/$8K）</a></b><br>资格赛要求团队全员来自同一所大学——社会身份/公司无法参赛。Stage 1 已于 2026-03-17 开启。</div>
+<div class="danger"><b><a href="https://e.huawei.com/talent/" target="_blank">第十一届华为 ICT 大赛创新赛（三大赛题，11-30 报名截止）</a></b> · 截止 2026-11-30<br>参赛对象为高校在校学生，公司/社会身份无法报名（赛题二为华为云 AgentArts 智能体应用）。</div>
+<div class="note"><b><a href="https://www.aicrowd.com/challenges" target="_blank">AIcrowd</a></b><br>当前空窗：2026 年唯一奖金赛 ARC White-Box Estimation 已于 8 月收官。NeurIPS 系比赛集中在每年年中，出新赛再看。</div>
+<div class="note"><b><a href="https://tianchi.aliyun.com/competition" target="_blank">天池 / 和鲸 / Topcoder / SIGNATE</a></b><br>本轮未发现可报名的在途现金奖金赛（天池当前主打高校类赛事；Topcoder/SIGNATE 无公开在途 ML 奖金赛）。列为观察名单，出新赛再报。</div>
+
+<h2>▍2027 备战日历</h2>
+<div class="cal"><div class="cal-item"><span class="m">[2027-01]</span> <b><a href="https://imc-prosperity.com" target="_blank">IMC Prosperity 2027</a></b><div class="small">IMC Trading 全球算法交易赛：零 GPU、总奖金数万美元、有量化经验直通优势。每年 1 月报名、3-4 月开赛（以官网为准）。</div></div>
+<div class="cal-item"><span class="m">[2027-01/02]</span> <b><a href="https://www.datafountain.cn/competitions" target="_blank">数字中国创新大赛 2027</a></b><div class="small">DF 平台承办：2025 届单题 ¥16-17 万、公开榜、赛期约 2 个月、公司可参加。每年 1-2 月启动。</div></div>
+<div class="cal-item"><span class="m">[2027-05/06]</span> <b><a href="https://www.sme.gov.cn/" target="_blank">创客中国 2027（工信部）</a></b><div class="small">北京等赛区单项最高 100 万奖励，公司主体 BP 申报。河南可关注创客河南通道。</div></div>
+<div class="cal-item"><span class="m">[2027-05/06]</span> <b><a href="https://challenge.xfyun.cn/" target="_blank">讯飞 AI 开发者大赛 2027</a></b><div class="small">100+ 赛道、单题几千-几万奖金、公开榜、讯飞提供免费云算力。</div></div>
+<div class="cal-item"><span class="m">[2027 上半年]</span> <b><a href="https://neurips.cc/" target="_blank">NeurIPS 2027 竞赛系列</a></b><div class="small">每年 5 月前后公布，10+ 个学术竞赛赛道，部分有奖金且平台提供算力。</div></div>
+<div class="cal-item"><span class="m">[2027-07]</span> <b><a href="https://www.datafountain.cn/" target="_blank">CCF BDCI 2027</a></b><div class="small">国内最正的公开榜大赛：十几道企业真题、总奖池大、公司可组队。7 月发布赛题，10 月 CNCC 颁奖（中科息壤平台）。</div></div>
+<div class="cal-item"><span class="m">[2027-07]</span> <b><a href="https://gaiiec.caai.cn/" target="_blank">CAAI 全球 AI 创新创业大赛 2027</a></b><div class="small">初创组/成长组按营收分组，奖金 5/3/1 万 ×14 项 + 杭州余杭最高 750 万政策配套。营收/融资 ≤1000 万报初创组。</div></div>
+<div class="cal-item"><span class="m">[2027 夏]</span> <b><a href="https://www.datafountain.cn/" target="_blank">DF · 6G/B6G 无线通信 AI 大赛（2026 届）</a></b><div class="small">IMT-2030 推进组主办，2025 届 ¥30 万、约 500 队、公开榜。预计夏季开赛。</div></div></div>
+
+<h2>▍数据来源与转载声明</h2>
+
+<div class="card" id="source-note" style="border-left:3px solid var(--cyan)">
+<h3>数据来源与转载声明</h3>
+<ul style="margin-left:18px">
+<li><b>自动采集来源</b>：Zindi 官方 API（api.zindi.africa）· DrivenData 公开列表页 · DataFountain 公开列表页。仅抓取公开发布的事实字段（名称 / 奖金 / 截止时间 / 参赛规模），不搬运正文内容。</li>
+<li><b>人工情报来源</b>：各赛事主办方官网与官方微信公众号公开发布的信息（CCF / 华为 / 讯飞 / 魔搭 / 波克 / WorldQuant / 珠海市政府等），情报更新时间见页首。</li>
+<li><b>版权归属</b>：各赛事的名称、规则、素材与奖金信息的版权归主办方所有。本站所有条目均附<b>官方原文链接</b>，一切以官方页面为准；报名前请阅读各赛 Rules / Eligibility 条款。</li>
+<li><b>用途说明</b>：本页为公开信息的个人导航聚合，不用于商业转售。如需引用或转载本页内容，请注明原始赛事来源；如有主办方不希望被收录，可联系删除。</li>
+</ul>
+</div>
+
+<footer>
+  由 ai-arena 自动采集渲染 · 各源详情见上方声明区块 · 本页纯静态无外部依赖，可双击打开或托管于 GitHub Pages
+</footer>
+
+</div>
+<script>
+document.querySelectorAll('.filters button').forEach(function(b){
+  b.addEventListener('click',function(){
+    document.querySelectorAll('.filters button').forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on');
+    var f=b.dataset.f;
+    document.querySelectorAll('#live tr').forEach(function(tr){
+      if(tr.querySelector('th'))return;
+      tr.style.display=(f==='ALL'||tr.dataset.p===f)?'':'none';
+    });
+  });
+});
+</script>
+</body>
+</html>

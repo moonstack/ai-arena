@@ -1,0 +1,125 @@
+{
+  "updated": "2026-11-11",
+  "_comment": "人工维护数据：自动采集抓不到的国内赛事（公众号发布类）、永续平台、避坑观察、明年日历。由 AI 或人工定期更新。",
+  "windows": [
+    {
+      "title": "TEC-AGI 2026 全国通用人工智能创新应用大赛 + CCF 科技创业大赛(TEC 2026)",
+      "url": "https://ccf.org.cn/tec2026suzhou",
+      "deadline": "2026-11-15",
+      "prize": "最高2000万政策支持 + 最高5000万场景订单（非现金奖励）",
+      "tags": ["公司主体", "投BP免费", "评审路演"],
+      "note": "8大专项赛：AI+智能制造(苏州张家港)/生物医药(亳州，首批场景预算3580万)/工业制造(马鞍山)/生物制造(芜湖)等。CCF主办，公司主体报名合适。"
+    },
+    {
+      "title": "2026 珠海人工智能 OPC 创业大赛（社会组）",
+      "url": "https://zhrsj.zhuhai.gov.cn/zw/zdlyxxgk/gzdt/content/post_3955717.html",
+      "deadline": "2026-11-20",
+      "prize": "最高6万现金 + 500万创业担保贷款 + 300万算力券",
+      "tags": ["公司主体", "地域绑定珠海"],
+      "note": "不限户籍地域，但需'有意向在珠海创业'。AI硬件/AI软件与智能体/AIGC三大方向，初赛12月上旬书面评审。"
+    },
+    {
+      "title": "魔搭 AI∞ 开发者创作大赛 · 第三期「AI 造游戏」",
+      "url": "https://www.163.com/dy/article/LBAD8SJU0511D3QS.html",
+      "deadline": null,
+      "prize": "最高15,000元现金 + 硬件设备",
+      "tags": ["AI游戏", "作品评审", "月度赛"],
+      "note": "魔搭社区+Qoder+盛趣游戏联合发起。用AI创作原创游戏发布到魔搭创空间。11月初启动，每月一个主题，滚动开赛。"
+    },
+    {
+      "title": "2026 波克 AI 游戏创作大赛（BOKE NEW WAVE）",
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5NjUwNzg4Mg==&mid=2702242671&idx=2&sn=92ed1e5a725c4ae3c8eb5f435898e630",
+      "deadline": null,
+      "prize": "入围30强每队最高6000元Token补贴 + 决赛奖金",
+      "tags": ["AI游戏", "文旅/教育题材", "青年向"],
+      "note": "11月9日启动，上海线下决赛。作品评审制，波克城市主办。"
+    },
+    {
+      "title": "2026 华为云 OPC 创意大赛",
+      "url": "https://one.sipac.gov.cn/frzrk/ndaservplat/Apps/sme/index.php?s=/Activity/detail/activityid/3DED20CA-B7EA-92CD-253D-75410BACB779",
+      "deadline": null,
+      "prize": "算力券 + 全联接大会入场机会",
+      "tags": ["开放赛题", "一人公司友好"],
+      "note": "以「OPC+AI工具」为核心做创意开发（AI原生应用/工具/智能体等），不设固定赛道，面向独立开发者和创业者。截止时间以官网为准。"
+    },
+    {
+      "title": "第十一届全国青年人工智能创新创业大赛 ·「揭榜挂帅」专项赛",
+      "url": "https://carc.hitsz.edu.cn/info/1022/3941.htm",
+      "deadline": null,
+      "prize": "奖金待核实（往届为现金+落地扶持）",
+      "tags": ["青年团队", "企业发榜"],
+      "note": "11月6日发榜公告。面向高校学生团队+青年科技人才团队，面向企业真实需求揭榜打擂。奖金与年龄线需查官方细则。"
+    },
+    {
+      "title": "2026「金灵光杯」中国互联网创新大赛（第三届）",
+      "url": "https://www.isc.org.cn/article/27706674351828992.html",
+      "deadline": null,
+      "prize": "按专题赛设置（偏荣誉/资源）",
+      "tags": ["14专题", "公司可报", "方案申报"],
+      "note": "中国互联网协会主办。专题：数据要素/AI+创新应用/算力/金融科技/车联网/6G-B6G无线通信AI等。年内评审。"
+    }
+  ],
+  "always": [
+    {
+      "title": "Numerai 众包量化锦标赛",
+      "url": "https://numer.ai",
+      "prize": "每月以 NMR 代币发放（需质押参与）",
+      "tags": ["永续", "公开榜", "零GPU", "量化"],
+      "note": "股市预测锦标赛，与 CrunchDAO 同构。练兵零成本；拿奖励需 stake NMR（预测差会被罚没），与零风险原则冲突，小注试水需自己拍板。"
+    }
+  ],
+  "watch": [
+    {
+      "title": "ARC Prize 2026",
+      "url": "https://arcprize.org",
+      "deadline": "2026-12-04",
+      "level": "red",
+      "note": "总奖金 $2,000,000 真实、公开榜真实，但 ARC-AGI 需海量 test-time 推理算力，且是全球顶尖实验室主战场——违反'GPU压力低'与'竞争平稳'两条硬标准，不建议投入。"
+    },
+    {
+      "title": "DrivenData · GEMS 地质制图挑战（$10万-30万级）",
+      "url": "https://www.drivendata.org/competitions/306/",
+      "deadline": "2026-12-03",
+      "level": "red",
+      "note": "美国能源部(DOE) Office of Geothermal 资助的 American-Made 系列赛事，带联邦政府资质审查，大概率仅限美国公民/美国注册实体。中国大陆主体不建议投入。"
+    },
+    {
+      "title": "WorldQuant IQC 2026（全球决赛 $20K/$12K/$8K）",
+      "url": "https://www.worldquant.com/iqc",
+      "deadline": null,
+      "level": "red",
+      "note": "资格赛要求团队全员来自同一所大学——社会身份/公司无法参赛。Stage 1 已于 2026-03-17 开启。"
+    },
+    {
+      "title": "第十一届华为 ICT 大赛创新赛（三大赛题，11-30 报名截止）",
+      "url": "https://e.huawei.com/talent/",
+      "deadline": "2026-11-30",
+      "level": "red",
+      "note": "参赛对象为高校在校学生，公司/社会身份无法报名（赛题二为华为云 AgentArts 智能体应用）。"
+    },
+    {
+      "title": "AIcrowd",
+      "url": "https://www.aicrowd.com/challenges",
+      "deadline": null,
+      "level": "yellow",
+      "note": "当前空窗：2026 年唯一奖金赛 ARC White-Box Estimation 已于 8 月收官。NeurIPS 系比赛集中在每年年中，出新赛再看。"
+    },
+    {
+      "title": "天池 / 和鲸 / Topcoder / SIGNATE",
+      "url": "https://tianchi.aliyun.com/competition",
+      "deadline": null,
+      "level": "yellow",
+      "note": "本轮未发现可报名的在途现金奖金赛（天池当前主打高校类赛事；Topcoder/SIGNATE 无公开在途 ML 奖金赛）。列为观察名单，出新赛再报。"
+    }
+  ],
+  "calendar": [
+    {"month": "2027-01", "title": "IMC Prosperity 2027", "desc": "IMC Trading 全球算法交易赛：零 GPU、总奖金数万美元、有量化经验直通优势。每年 1 月报名、3-4 月开赛（以官网为准）。", "url": "https://imc-prosperity.com"},
+    {"month": "2027-01/02", "title": "数字中国创新大赛 2027", "desc": "DF 平台承办：2025 届单题 ¥16-17 万、公开榜、赛期约 2 个月、公司可参加。每年 1-2 月启动。", "url": "https://www.datafountain.cn/competitions"},
+    {"month": "2027-05/06", "title": "创客中国 2027（工信部）", "desc": "北京等赛区单项最高 100 万奖励，公司主体 BP 申报。河南可关注创客河南通道。", "url": "https://www.sme.gov.cn/"},
+    {"month": "2027-05/06", "title": "讯飞 AI 开发者大赛 2027", "desc": "100+ 赛道、单题几千-几万奖金、公开榜、讯飞提供免费云算力。", "url": "https://challenge.xfyun.cn/"},
+    {"month": "2027 上半年", "title": "NeurIPS 2027 竞赛系列", "desc": "每年 5 月前后公布，10+ 个学术竞赛赛道，部分有奖金且平台提供算力。", "url": "https://neurips.cc/"},
+    {"month": "2027-07", "title": "CCF BDCI 2027", "desc": "国内最正的公开榜大赛：十几道企业真题、总奖池大、公司可组队。7 月发布赛题，10 月 CNCC 颁奖（中科息壤平台）。", "url": "https://www.datafountain.cn/"},
+    {"month": "2027-07", "title": "CAAI 全球 AI 创新创业大赛 2027", "desc": "初创组/成长组按营收分组，奖金 5/3/1 万 ×14 项 + 杭州余杭最高 750 万政策配套。营收/融资 ≤1000 万报初创组。", "url": "https://gaiiec.caai.cn/"},
+    {"month": "2027 夏", "title": "DF · 6G/B6G 无线通信 AI 大赛（2026 届）", "desc": "IMT-2030 推进组主办，2025 届 ¥30 万、约 500 队、公开榜。预计夏季开赛。", "url": "https://www.datafountain.cn/"}
+  ]
+}

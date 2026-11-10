@@ -1,0 +1,84 @@
+{
+  "generated": "2026-11-11T07:36:00",
+  "proxy": "http://127.0.0.1:7897",
+  "items": [
+    {
+      "title": "The Geologic Enhanced Mapping System (GEMS) Prize Challenge",
+      "platform": "DrivenData",
+      "url": "https://www.drivendata.org/competitions/306/competition-doe-gems/",
+      "prize": "$300,000",
+      "deadline": "2026-12-03",
+      "participants": 970,
+      "kind": "prize",
+      "org": "DrivenData",
+      "note": "公益数据科学赛 · 注意个别赛为美国联邦资助(如 American-Made 系列)需自查资格"
+    },
+    {
+      "title": "GenAI for Good Challenge: Cities Edition (Phase 1 Technical Assessment)",
+      "platform": "Zindi",
+      "url": "https://zindi.africa/competitions/GenAI-for-Good-Challenge",
+      "prize": "$40 000 USD",
+      "deadline": "2026-12-13",
+      "participants": 385,
+      "kind": "competition",
+      "org": "IEEE Humanitarian Technologies x UNDP",
+      "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
+    },
+    {
+      "title": "Underwater Vessel Noise Challenge by the French Embassy in South Africa",
+      "platform": "Zindi",
+      "url": "https://zindi.africa/competitions/french-embassy-underwater-vessel-noise-challenge",
+      "prize": "$5 000 USD",
+      "deadline": "2026-12-13",
+      "participants": 1059,
+      "kind": "competition",
+      "org": "",
+      "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
+    },
+    {
+      "title": "TelcoRetrieve Challenge: Unlocking Telco Knowledge",
+      "platform": "Zindi",
+      "url": "https://zindi.africa/competitions/telcoretrieve-challenge-unlocking-telco-knowledge",
+      "prize": "$20 000 USD",
+      "deadline": "2027-01-13",
+      "participants": 39,
+      "kind": "competition",
+      "org": "ITU",
+      "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
+    },
+    {
+      "title": "AMD Global Physical AI Behavioral Safety Challenge",
+      "platform": "Zindi",
+      "url": "https://zindi.africa/competitions/amd-global-physical-ai-safety-challenge",
+      "prize": "$10 000 USD",
+      "deadline": "2027-01-31",
+      "participants": 236,
+      "kind": "competition",
+      "org": "",
+      "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
+    },
+    {
+      "title": "AI Agents for RAN Challenge",
+      "platform": "Zindi",
+      "url": "https://zindi.africa/competitions/ai-agents-for-ran-challenge",
+      "prize": "€20 000 EUR",
+      "deadline": "2027-02-05",
+      "participants": 36,
+      "kind": "competition",
+      "org": "ITU",
+      "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
+    },
+    {
+      "title": "Green Rising Methane Innovation Challenge",
+      "platform": "Zindi",
+      "url": "https://zindi.africa/competitions/green-rising-methane-innovation-challenge",
+      "prize": "$10 000 USD",
+      "deadline": "2027-02-14",
+      "participants": 207,
+      "kind": "competition",
+      "org": "",
+      "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
+    }
+  ],
+  "errors": []
+}
