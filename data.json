@@ -1,7 +1,18 @@
 {
-  "generated": "2026-11-11T07:36:00",
-  "proxy": "http://127.0.0.1:7897",
+  "generated": "2026-11-10T23:47:09",
+  "proxy": "(direct)",
   "items": [
+    {
+      "title": "Google Mumbai Data Challenge: Air Quality Mapping & Forecasting",
+      "platform": "Zindi",
+      "url": "https://zindi.africa/competitions/google-mumbai-data-challenge",
+      "prize": "$6 000 USD",
+      "deadline": "2026-11-10",
+      "participants": 259,
+      "kind": "hackathon",
+      "org": "Google",
+      "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
+    },
     {
       "title": "The Geologic Enhanced Mapping System (GEMS) Prize Challenge",
       "platform": "DrivenData",
@@ -19,7 +30,7 @@
       "url": "https://zindi.africa/competitions/GenAI-for-Good-Challenge",
       "prize": "$40 000 USD",
       "deadline": "2026-12-13",
-      "participants": 385,
+      "participants": 386,
       "kind": "competition",
       "org": "IEEE Humanitarian Technologies x UNDP",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
