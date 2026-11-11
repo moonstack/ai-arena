@@ -1,25 +1,14 @@
 {
-  "generated": "2026-11-10T23:47:09",
+  "generated": "2026-11-11T06:55:30",
   "proxy": "(direct)",
   "items": [
-    {
-      "title": "Google Mumbai Data Challenge: Air Quality Mapping & Forecasting",
-      "platform": "Zindi",
-      "url": "https://zindi.africa/competitions/google-mumbai-data-challenge",
-      "prize": "$6 000 USD",
-      "deadline": "2026-11-10",
-      "participants": 259,
-      "kind": "hackathon",
-      "org": "Google",
-      "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
-    },
     {
       "title": "The Geologic Enhanced Mapping System (GEMS) Prize Challenge",
       "platform": "DrivenData",
       "url": "https://www.drivendata.org/competitions/306/competition-doe-gems/",
       "prize": "$300,000",
       "deadline": "2026-12-03",
-      "participants": 970,
+      "participants": 973,
       "kind": "prize",
       "org": "DrivenData",
       "note": "公益数据科学赛 · 注意个别赛为美国联邦资助(如 American-Made 系列)需自查资格"
@@ -30,7 +19,7 @@
       "url": "https://zindi.africa/competitions/GenAI-for-Good-Challenge",
       "prize": "$40 000 USD",
       "deadline": "2026-12-13",
-      "participants": 386,
+      "participants": 394,
       "kind": "competition",
       "org": "IEEE Humanitarian Technologies x UNDP",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -41,7 +30,7 @@
       "url": "https://zindi.africa/competitions/french-embassy-underwater-vessel-noise-challenge",
       "prize": "$5 000 USD",
       "deadline": "2026-12-13",
-      "participants": 1059,
+      "participants": 1062,
       "kind": "competition",
       "org": "",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -52,7 +41,7 @@
       "url": "https://zindi.africa/competitions/telcoretrieve-challenge-unlocking-telco-knowledge",
       "prize": "$20 000 USD",
       "deadline": "2027-01-13",
-      "participants": 39,
+      "participants": 49,
       "kind": "competition",
       "org": "ITU",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -63,7 +52,7 @@
       "url": "https://zindi.africa/competitions/amd-global-physical-ai-safety-challenge",
       "prize": "$10 000 USD",
       "deadline": "2027-01-31",
-      "participants": 236,
+      "participants": 239,
       "kind": "competition",
       "org": "",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -74,7 +63,7 @@
       "url": "https://zindi.africa/competitions/ai-agents-for-ran-challenge",
       "prize": "€20 000 EUR",
       "deadline": "2027-02-05",
-      "participants": 36,
+      "participants": 41,
       "kind": "competition",
       "org": "ITU",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -85,7 +74,7 @@
       "url": "https://zindi.africa/competitions/green-rising-methane-innovation-challenge",
       "prize": "$10 000 USD",
       "deadline": "2027-02-14",
-      "participants": 207,
+      "participants": 212,
       "kind": "competition",
       "org": "",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
