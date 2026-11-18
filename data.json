@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-17T08:17:18",
+  "generated": "2026-11-18T07:49:18",
   "proxy": "(direct)",
   "items": [
     {
@@ -8,7 +8,7 @@
       "url": "https://zindi.africa/competitions/predictive-insights-youth-income-prediction-challenge-sa-ambassador-hack",
       "prize": "500 Points",
       "deadline": "2026-11-19",
-      "participants": 6,
+      "participants": 18,
       "kind": "hackathon",
       "org": "",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -17,7 +17,7 @@
       "title": "University Hackathon by CMU: Climate Risk and Health Prediction Challenge",
       "platform": "Zindi",
       "url": "https://zindi.africa/competitions/climate-risk-health-prediction-cmu-hackathon",
-      "prize": "500 Points",
+      "prize": "3000 Points",
       "deadline": "2026-11-27",
       "participants": 1,
       "kind": "hackathon",
@@ -30,7 +30,7 @@
       "url": "https://www.drivendata.org/competitions/306/competition-doe-gems/",
       "prize": "$300,000",
       "deadline": "2026-12-03",
-      "participants": 1048,
+      "participants": 1056,
       "kind": "prize",
       "org": "DrivenData",
       "note": "公益数据科学赛 · 注意个别赛为美国联邦资助(如 American-Made 系列)需自查资格"
@@ -41,7 +41,7 @@
       "url": "https://zindi.africa/competitions/GenAI-for-Good-Challenge",
       "prize": "$40 000 USD",
       "deadline": "2026-12-13",
-      "participants": 575,
+      "participants": 608,
       "kind": "competition",
       "org": "IEEE Humanitarian Technologies x UNDP",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -52,7 +52,18 @@
       "url": "https://zindi.africa/competitions/french-embassy-underwater-vessel-noise-challenge",
       "prize": "$5 000 USD",
       "deadline": "2026-12-13",
-      "participants": 1214,
+      "participants": 1242,
+      "kind": "competition",
+      "org": "",
+      "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
+    },
+    {
+      "title": "HOTOSM African Highway Segmentation Challenge",
+      "platform": "Zindi",
+      "url": "https://zindi.africa/competitions/hotosm-african-highway-segmentation",
+      "prize": "$2 500 USD",
+      "deadline": "2026-12-13",
+      "participants": 101,
       "kind": "competition",
       "org": "",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -63,7 +74,7 @@
       "url": "https://zindi.africa/competitions/dischem-product-data-entichment-challenge",
       "prize": "$5 000 USD",
       "deadline": "2026-12-13",
-      "participants": 266,
+      "participants": 300,
       "kind": "competition",
       "org": "",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -74,20 +85,9 @@
       "url": "https://zindi.africa/competitions/telcoretrieve-challenge-unlocking-telco-knowledge",
       "prize": "€25 000 EUR",
       "deadline": "2027-01-13",
-      "participants": 332,
+      "participants": 366,
       "kind": "competition",
       "org": "ITU",
-      "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
-    },
-    {
-      "title": "AMD Global Physical AI Behavioral Safety Challenge",
-      "platform": "Zindi",
-      "url": "https://zindi.africa/competitions/amd-global-physical-ai-safety-challenge",
-      "prize": "$10 000 USD",
-      "deadline": "2027-01-31",
-      "participants": 334,
-      "kind": "competition",
-      "org": "",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
     },
     {
@@ -96,7 +96,7 @@
       "url": "https://zindi.africa/competitions/ai-agents-for-ran-challenge",
       "prize": "€20 000 EUR",
       "deadline": "2027-02-05",
-      "participants": 152,
+      "participants": 163,
       "kind": "competition",
       "org": "ITU",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -107,7 +107,18 @@
       "url": "https://zindi.africa/competitions/green-rising-methane-innovation-challenge",
       "prize": "$10 000 USD",
       "deadline": "2027-02-14",
-      "participants": 294,
+      "participants": 299,
+      "kind": "competition",
+      "org": "",
+      "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
+    },
+    {
+      "title": "AMD Global Physical AI Behavioral Safety Challenge",
+      "platform": "Zindi",
+      "url": "https://zindi.africa/competitions/amd-global-physical-ai-safety-challenge",
+      "prize": "$10 000 USD",
+      "deadline": "2027-02-14",
+      "participants": 349,
       "kind": "competition",
       "org": "",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
