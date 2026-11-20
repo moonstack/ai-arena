@@ -1,14 +1,14 @@
 {
-  "generated": "2026-11-19T07:44:55",
+  "generated": "2026-11-20T07:37:30",
   "proxy": "(direct)",
   "items": [
     {
-      "title": "SA Community Challenge: Predictive Insights Youth Income Prediction Challenge",
+      "title": "University Hackathon by CMU: Climate Risk and Health Prediction Challenge",
       "platform": "Zindi",
-      "url": "https://zindi.africa/competitions/predictive-insights-youth-income-prediction-challenge-sa-ambassador-hack",
-      "prize": "500 Points",
-      "deadline": "2026-11-19",
-      "participants": 22,
+      "url": "https://zindi.africa/competitions/climate-risk-health-prediction-cmu-hackathon",
+      "prize": "3000 Points",
+      "deadline": "2026-11-27",
+      "participants": 1,
       "kind": "hackathon",
       "org": "",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -19,7 +19,7 @@
       "url": "https://www.drivendata.org/competitions/306/competition-doe-gems/",
       "prize": "$300,000",
       "deadline": "2026-12-03",
-      "participants": 1068,
+      "participants": 1084,
       "kind": "prize",
       "org": "DrivenData",
       "note": "公益数据科学赛 · 注意个别赛为美国联邦资助(如 American-Made 系列)需自查资格"
@@ -30,7 +30,7 @@
       "url": "https://zindi.africa/competitions/GenAI-for-Good-Challenge",
       "prize": "$40 000 USD",
       "deadline": "2026-12-13",
-      "participants": 631,
+      "participants": 647,
       "kind": "competition",
       "org": "IEEE Humanitarian Technologies x UNDP",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -41,7 +41,7 @@
       "url": "https://zindi.africa/competitions/hotosm-african-highway-segmentation",
       "prize": "$2 500 USD",
       "deadline": "2026-12-13",
-      "participants": 173,
+      "participants": 229,
       "kind": "competition",
       "org": "",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -52,7 +52,7 @@
       "url": "https://zindi.africa/competitions/french-embassy-underwater-vessel-noise-challenge",
       "prize": "$5 000 USD",
       "deadline": "2026-12-13",
-      "participants": 1258,
+      "participants": 1281,
       "kind": "competition",
       "org": "",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -63,7 +63,7 @@
       "url": "https://zindi.africa/competitions/frugal-tonal-asr-challenge-for-fongbe",
       "prize": "$5 000 USD",
       "deadline": "2026-12-13",
-      "participants": 52,
+      "participants": 95,
       "kind": "competition",
       "org": "",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -74,7 +74,7 @@
       "url": "https://zindi.africa/competitions/dischem-product-data-entichment-challenge",
       "prize": "$5 000 USD",
       "deadline": "2026-12-13",
-      "participants": 325,
+      "participants": 351,
       "kind": "competition",
       "org": "",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -85,7 +85,7 @@
       "url": "https://zindi.africa/competitions/telcoretrieve-challenge-unlocking-telco-knowledge",
       "prize": "€25 000 EUR",
       "deadline": "2027-01-13",
-      "participants": 397,
+      "participants": 415,
       "kind": "competition",
       "org": "ITU",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -96,7 +96,7 @@
       "url": "https://zindi.africa/competitions/ai-agents-for-ran-challenge",
       "prize": "€30 000 EUR",
       "deadline": "2027-02-05",
-      "participants": 185,
+      "participants": 204,
       "kind": "competition",
       "org": "ITU",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -107,7 +107,7 @@
       "url": "https://zindi.africa/competitions/green-rising-methane-innovation-challenge",
       "prize": "$10 000 USD",
       "deadline": "2027-02-14",
-      "participants": 309,
+      "participants": 315,
       "kind": "competition",
       "org": "",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -118,7 +118,7 @@
       "url": "https://zindi.africa/competitions/amd-global-physical-ai-safety-challenge",
       "prize": "$10 000 USD",
       "deadline": "2027-02-14",
-      "participants": 377,
+      "participants": 389,
       "kind": "competition",
       "org": "",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
