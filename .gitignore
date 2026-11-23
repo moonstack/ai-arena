@@ -1,2 +1,5 @@
 __pycache__/
 *.pyc
+kaggle.json
+.kaggle/
+*.json.key
