@@ -11,6 +11,9 @@
 | Zindi | 官方 API (`api.zindi.africa/v1/competitions`) | 境外,本地跑需梯子 |
 | DrivenData | 列表页结构化 data-* 属性解析 | 境外,本地跑需梯子 |
 | DataFountain | 列表页 HTML 解析 | 国内直连 |
+| PandaAI | 官网首页 proof-card 解析(仅收录"进行中"赛事) | 国内直连 |
+
+页面内置不蒜子(busuanzi)访问计数(PV/UV),footer 显示。
 
 人工维护源(公众号类赛事、永续平台、避坑清单、2027 日历)在 `curated.json`,无结构化接口,由 AI/人工定期更新。
 

@@ -1,6 +1,6 @@
 {
-  "generated": "2026-11-22T07:15:33",
-  "proxy": "(direct)",
+  "generated": "2026-11-23T11:15:32",
+  "proxy": "http://127.0.0.1:7897",
   "items": [
     {
       "title": "University Hackathon by CMU: Climate Risk and Health Prediction Challenge",
@@ -8,7 +8,7 @@
       "url": "https://zindi.africa/competitions/climate-risk-health-prediction-cmu-hackathon",
       "prize": "3000 Points",
       "deadline": "2026-11-27",
-      "participants": 76,
+      "participants": 77,
       "kind": "hackathon",
       "org": "",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -19,7 +19,7 @@
       "url": "https://www.drivendata.org/competitions/306/competition-doe-gems/",
       "prize": "$300,000",
       "deadline": "2026-12-03",
-      "participants": 1116,
+      "participants": 1155,
       "kind": "prize",
       "org": "DrivenData",
       "note": "公益数据科学赛 · 注意个别赛为美国联邦资助(如 American-Made 系列)需自查资格"
@@ -30,20 +30,9 @@
       "url": "https://zindi.africa/competitions/GenAI-for-Good-Challenge",
       "prize": "$40 000 USD",
       "deadline": "2026-12-13",
-      "participants": 699,
+      "participants": 718,
       "kind": "competition",
       "org": "IEEE Humanitarian Technologies x UNDP",
-      "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
-    },
-    {
-      "title": "HOTOSM African Highway Segmentation Challenge",
-      "platform": "Zindi",
-      "url": "https://zindi.africa/competitions/hotosm-african-highway-segmentation",
-      "prize": "$2 500 USD",
-      "deadline": "2026-12-13",
-      "participants": 298,
-      "kind": "competition",
-      "org": "",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
     },
     {
@@ -52,7 +41,18 @@
       "url": "https://zindi.africa/competitions/french-embassy-underwater-vessel-noise-challenge",
       "prize": "$5 000 USD",
       "deadline": "2026-12-13",
-      "participants": 1320,
+      "participants": 1343,
+      "kind": "competition",
+      "org": "",
+      "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
+    },
+    {
+      "title": "HOTOSM African Highway Segmentation Challenge",
+      "platform": "Zindi",
+      "url": "https://zindi.africa/competitions/hotosm-african-highway-segmentation",
+      "prize": "$2 500 USD",
+      "deadline": "2026-12-13",
+      "participants": 321,
       "kind": "competition",
       "org": "",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -63,7 +63,7 @@
       "url": "https://zindi.africa/competitions/frugal-tonal-asr-challenge-for-fongbe",
       "prize": "$5 000 USD",
       "deadline": "2026-12-13",
-      "participants": 277,
+      "participants": 354,
       "kind": "competition",
       "org": "",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -74,7 +74,7 @@
       "url": "https://zindi.africa/competitions/dischem-product-data-entichment-challenge",
       "prize": "$5 000 USD",
       "deadline": "2026-12-13",
-      "participants": 384,
+      "participants": 405,
       "kind": "competition",
       "org": "",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -85,7 +85,7 @@
       "url": "https://zindi.africa/competitions/telcoretrieve-challenge-unlocking-telco-knowledge",
       "prize": "€25 000 EUR",
       "deadline": "2027-01-13",
-      "participants": 473,
+      "participants": 500,
       "kind": "competition",
       "org": "ITU",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -96,7 +96,7 @@
       "url": "https://zindi.africa/competitions/ai-agents-for-ran-challenge",
       "prize": "€30 000 EUR",
       "deadline": "2027-02-05",
-      "participants": 241,
+      "participants": 262,
       "kind": "competition",
       "org": "ITU",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -107,7 +107,7 @@
       "url": "https://zindi.africa/competitions/green-rising-methane-innovation-challenge",
       "prize": "$10 000 USD",
       "deadline": "2027-02-14",
-      "participants": 333,
+      "participants": 340,
       "kind": "competition",
       "org": "",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -118,10 +118,32 @@
       "url": "https://zindi.africa/competitions/amd-global-physical-ai-safety-challenge",
       "prize": "$10 000 USD",
       "deadline": "2027-02-14",
-      "participants": 492,
+      "participants": 510,
       "kind": "competition",
       "org": "",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
+    },
+    {
+      "title": "巅峰交易者 · 全国期货模拟赛",
+      "platform": "PandaAI",
+      "url": "https://www.pandaaiquant.com/contest/",
+      "prize": "8 万元奖金",
+      "deadline": null,
+      "participants": null,
+      "kind": "competition",
+      "org": "PandaAI",
+      "note": "手动交易、策略交易、AI 辅助交易同场竞技，8 万元奖金，用模拟盘打出真实水平。 · 滚动赛制"
+    },
+    {
+      "title": "第四届因子大赛：深耕 Alpha，穿越周期",
+      "platform": "PandaAI",
+      "url": "https://www.pandaaiquant.com/factorhub/fourthFactorCompetition/",
+      "prize": "奖池 120 万",
+      "deadline": null,
+      "participants": null,
+      "kind": "competition",
+      "org": "PandaAI",
+      "note": "在真实数据上角逐因子表现，全年奖池 120 万，永续赛制、随到随赛。 · 滚动赛制"
     }
   ],
   "errors": []

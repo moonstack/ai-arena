@@ -52,7 +52,8 @@ import urllib.request  # noqa: E402  (放前面是为了让 _mk_opener 可被单
 # 源 1: Zindi（官方 API, 境外 → 走代理）
 # ----------------------------------------------------------------------------
 def collect_zindi():
-    api = "https://api.zindi.africa/v1/competitions"
+    # ?status=open 直接返回全部在途赛（默认列表排序不稳定，会漏新开赛，见坑1/坑2）
+    api = "https://api.zindi.africa/v1/competitions?status=open"
     raw = fetch(api, use_proxy=True)
     data = json.loads(raw).get("data", [])
     out, errors = [], []
@@ -171,6 +172,39 @@ def collect_df():
     return out, errors
 
 # ----------------------------------------------------------------------------
+# 源 4: PandaAI（国内站 → 直连；Nuxt SSR 首页 proof-card 解析）
+# ----------------------------------------------------------------------------
+def collect_pandaai():
+    page = fetch("https://www.pandaaiquant.com/", use_proxy=False)
+    out, errors = [], []
+    for m in re.finditer(r'<li class="proof-card".*?</li>', page, re.S):
+        seg = m.group(0)
+        tm = re.search(r"<h3[^>]*>([^<]+)</h3>", seg)
+        if not tm:
+            continue
+        sm = re.search(r"<span[^>]*>(进行中|已结束)</span>", seg)
+        if sm and sm.group(1) != "进行中":
+            continue  # 只收录进行中的赛事
+        dm = re.search(r"<p[^>]*>([^<]+)</p>", seg)
+        lm = re.search(r'href="(/[^"\s]+)"', seg)
+        title = H.unescape(tm.group(1)).strip()
+        desc = H.unescape(dm.group(1)).strip() if dm else ""
+        pm = re.search(r"(奖池\s*[\d,.]+\s*万?|[\d,.]+\s*万[元]?奖金)", desc)
+        prize = pm.group(1) if pm else "见官网"
+        out.append({
+            "title": title, "platform": "PandaAI",
+            "url": "https://www.pandaaiquant.com" + (lm.group(1) if lm else "/"),
+            "prize": prize,
+            "deadline": None,  # 滚动赛制
+            "participants": None, "kind": "competition",
+            "org": "PandaAI",
+            "note": (desc + " · 滚动赛制") if desc else "滚动赛制",
+        })
+    if not out and "proof-card" not in page:
+        errors.append("PandaAI: 首页结构变化,未解析到竞赛卡片")
+    return out, errors
+
+# ----------------------------------------------------------------------------
 # 渲染
 # ----------------------------------------------------------------------------
 CSS = """
@@ -235,7 +269,7 @@ def fmt_participants(n):
 
 def platform_color(p):
     return {"Zindi": "#00e5ff", "DrivenData": "#ff2d78",
-            "DataFountain": "#ffb300"}.get(p, "#00ff9d")
+            "DataFountain": "#ffb300", "PandaAI": "#b388ff"}.get(p, "#00ff9d")
 
 def render(auto_items, source_errors, curated):
     now_str = dt.datetime.now().strftime("%Y-%m-%d %H:%M")
@@ -317,7 +351,7 @@ def render(auto_items, source_errors, curated):
 <div class="card" id="source-note" style="border-left:3px solid var(--cyan)">
 <h3>数据来源与转载声明</h3>
 <ul style="margin-left:18px">
-<li><b>自动采集来源</b>：Zindi 官方 API（api.zindi.africa）· DrivenData 公开列表页 · DataFountain 公开列表页。仅抓取公开发布的事实字段（名称 / 奖金 / 截止时间 / 参赛规模），不搬运正文内容。</li>
+<li><b>自动采集来源</b>：Zindi 官方 API（api.zindi.africa）· DrivenData 公开列表页 · DataFountain 公开列表页 · PandaAI 官网。仅抓取公开发布的事实字段（名称 / 奖金 / 截止时间 / 参赛规模），不搬运正文内容。</li>
 <li><b>人工情报来源</b>：各赛事主办方官网与官方微信公众号公开发布的信息（CCF / 华为 / 讯飞 / 魔搭 / 波克 / WorldQuant / 珠海市政府等），情报更新时间见页首。</li>
 <li><b>版权归属</b>：各赛事的名称、规则、素材与奖金信息的版权归主办方所有。本站所有条目均附<b>官方原文链接</b>，一切以官方页面为准；报名前请阅读各赛 Rules / Eligibility 条款。</li>
 <li><b>用途说明</b>：本页为公开信息的个人导航聚合，不用于商业转售。如需引用或转载本页内容，请注明原始赛事来源；如有主办方不希望被收录，可联系删除。</li>
@@ -338,7 +372,7 @@ def render(auto_items, source_errors, curated):
 
 <header>
   <h1>[ AI 竞赛导航 ] // AUTO-UPDATED</h1>
-  <div class="meta">自动采集：Zindi API · DrivenData · DataFountain ｜ 人工情报更新于 {cur_updated} ｜
+  <div class="meta">自动采集：Zindi API · DrivenData · DataFountain · PandaAI ｜ 人工情报更新于 {cur_updated} ｜
   本页数据生成时间：<b>{now_str}</b> ｜ <a href="#source-note" style="color:var(--amber)">来源与转载声明见页底</a></div>
   <div class="stats">
     <div class="stat"><b>{n_live}</b><span>自动源在途赛</span></div>
@@ -373,8 +407,11 @@ def render(auto_items, source_errors, curated):
 {src_html}
 
 <footer>
-  由 ai-arena 自动采集渲染 · 各源详情见上方声明区块 · 本页纯静态无外部依赖，可双击打开或托管于 GitHub Pages
+  由 ai-arena 自动采集渲染 · 各源详情见上方声明区块 · 本页纯静态无外部依赖，可双击打开或托管于 GitHub Pages<br>
+  <span id="busuanzi_container_site_pv" style="color:#00e5ff">访问量 <span id="busuanzi_value_site_pv">…</span> 次</span>
+  <span id="busuanzi_container_site_uv" style="margin-left:10px;color:#00e5ff">访客 <span id="busuanzi_value_site_uv">…</span> 人</span>
 </footer>
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 </div>
 <script>
@@ -398,7 +435,8 @@ def main():
     items, errors = [], []
     for name, fn, use in [("Zindi", collect_zindi, True),
                           ("DrivenData", collect_drivendata, True),
-                          ("DataFountain", collect_df, False)]:
+                          ("DataFountain", collect_df, False),
+                          ("PandaAI", collect_pandaai, False)]:
         try:
             got, errs = fn()
             items.extend(got)
