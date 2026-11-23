@@ -383,11 +383,15 @@ def render(auto_items, source_errors, curated):
         f'<div class="small">{esc(a.get("note",""))}</div></div>'
         for a in curated.get("always", []))
 
-    # 观察/避坑
+    # 观察/资格与投入提示（标签化，客观措辞）
     watch_html = "\n".join(
-        f'<div class="{"danger" if w.get("level")=="red" else "note"}">'
-        f'<b><a href="{esc(w["url"])}" target="_blank">{esc(w["title"])}</a></b>'
-        f'{" · 截止 " + esc(w["deadline"]) if w.get("deadline") else ""}<br>{esc(w.get("note",""))}</div>'
+        (lambda w, tc: 
+         f'<div class="{"danger" if w.get("level")=="red" else "note"}">'
+         f'<b><a href="{esc(w["url"])}" target="_blank">{esc(w["title"])}</a></b>'
+         f'{" · 截止 " + esc(w["deadline"]) if w.get("deadline") else ""}<br>'
+         + "".join(f'<span class="{tc} tag">{esc(t)}</span>' for t in w.get("tags", []))
+         + f'<div class="small" style="margin-top:4px">{esc(w.get("note",""))}</div></div>')
+        (w, "t-hot" if w.get("level")=="red" else "t-mid")
         for w in curated.get("watch", []))
 
     # 日历
@@ -447,16 +451,16 @@ def render(auto_items, source_errors, curated):
 </table>
 <p class="small">说明：Zindi 已报名数为注册数（实际认真参赛队伍远少于此）；报名前点开各赛 Rules 页确认 Eligibility；DrivenData 部分赛为美国联邦资助（American-Made 系列仅限美国主体）。</p>
 
-<h2>▍国内窗口 · 人工情报（公司主体可报）</h2>
+<h2>▍国内窗口 · 人工情报（个人/企业可报）</h2>
 {win_html}
 
 <h2>▍永续长线</h2>
 {always_html}
 
-<h2>▍观察 / 避坑清单</h2>
+<h2>▍观察 / 资格与投入提示</h2>
 {watch_html}
 
-<h2>▍2027 备战日历</h2>
+<h2>▍2027 赛事日历</h2>
 {cal_html}
 
 <h2>▍数据来源与转载声明</h2>
