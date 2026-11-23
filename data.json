@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-23T11:15:32",
+  "generated": "2026-11-23T11:47:08",
   "proxy": "http://127.0.0.1:7897",
   "items": [
     {
@@ -52,7 +52,7 @@
       "url": "https://zindi.africa/competitions/hotosm-african-highway-segmentation",
       "prize": "$2 500 USD",
       "deadline": "2026-12-13",
-      "participants": 321,
+      "participants": 322,
       "kind": "competition",
       "org": "",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -63,7 +63,7 @@
       "url": "https://zindi.africa/competitions/frugal-tonal-asr-challenge-for-fongbe",
       "prize": "$5 000 USD",
       "deadline": "2026-12-13",
-      "participants": 354,
+      "participants": 356,
       "kind": "competition",
       "org": "",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -74,7 +74,7 @@
       "url": "https://zindi.africa/competitions/dischem-product-data-entichment-challenge",
       "prize": "$5 000 USD",
       "deadline": "2026-12-13",
-      "participants": 405,
+      "participants": 406,
       "kind": "competition",
       "org": "",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -118,7 +118,7 @@
       "url": "https://zindi.africa/competitions/amd-global-physical-ai-safety-challenge",
       "prize": "$10 000 USD",
       "deadline": "2027-02-14",
-      "participants": 510,
+      "participants": 511,
       "kind": "competition",
       "org": "",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -146,5 +146,7 @@
       "note": "在真实数据上角逐因子表现，全年奖池 120 万，永续赛制、随到随赛。 · 滚动赛制"
     }
   ],
-  "errors": []
+  "errors": [
+    "Kaggle: 未配置凭据（~/.kaggle/kaggle.json 或 KAGGLE_USERNAME/KAGGLE_KEY）"
+  ]
 }

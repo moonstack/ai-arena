@@ -30,7 +30,7 @@ CTX = ssl.create_default_context()
 CTX.check_hostname = False
 CTX.verify_mode = ssl.CERT_NONE  # 部分代理链下证书校验会失败
 
-def fetch(url, use_proxy=True, timeout=30):
+def fetch(url, use_proxy=True, timeout=30, headers=None):
     """抓取 URL。use_proxy=True 时走 ARENA_PROXY（本地梯子），False 直连（国内站）。"""
     handlers = []
     if use_proxy and PROXY:
@@ -38,8 +38,10 @@ def fetch(url, use_proxy=True, timeout=30):
     if not handlers:
         handlers.append({})  # 显式空代理 = 强制直连
     opener = _mk_opener(handlers[0])
-    req = urllib.request.Request(url, headers={
-        "User-Agent": UA, "Accept-Language": "en,zh-CN;q=0.9"})
+    hdrs = {"User-Agent": UA, "Accept-Language": "en,zh-CN;q=0.9"}
+    if headers:
+        hdrs.update(headers)
+    req = urllib.request.Request(url, headers=hdrs)
     with opener.open(req, timeout=timeout) as r:
         return r.read().decode("utf-8", "replace")
 
@@ -205,6 +207,58 @@ def collect_pandaai():
     return out, errors
 
 # ----------------------------------------------------------------------------
+# 源 5: Kaggle（官方 API, 境外 → 走代理；需凭据）
+# 凭据优先级：环境变量 KAGGLE_USERNAME/KAGGLE_KEY（GitHub Actions Secrets）
+#            >  本机 ~/.kaggle/kaggle.json
+# 无凭据时优雅跳过（不影响其余源）
+# ----------------------------------------------------------------------------
+def collect_kaggle():
+    user = os.environ.get("KAGGLE_USERNAME", "").strip()
+    key = os.environ.get("KAGGLE_KEY", "").strip()
+    if not (user and key):
+        kf = Path(os.path.expanduser("~/.kaggle/kaggle.json"))
+        if kf.exists():
+            try:
+                j = json.loads(kf.read_text(encoding="utf-8"))
+                user, key = j.get("username", ""), j.get("key", "")
+            except Exception as e:
+                return [], [f"Kaggle: 读取 kaggle.json 失败 — {e}"]
+    if not (user and key):
+        return [], ["Kaggle: 未配置凭据（~/.kaggle/kaggle.json 或 KAGGLE_USERNAME/KAGGLE_KEY）"]
+    import base64
+    auth = base64.b64encode(f"{user}:{key}".encode()).decode()
+    raw = fetch("https://www.kaggle.com/api/v1/competitions/list?page=1",
+                use_proxy=True, headers={"Authorization": f"Basic {auth}"})
+    data = json.loads(raw)
+    out, errors = [], []
+    for c in data:
+        try:
+            dl = (c.get("deadline") or "").strip()
+            if not dl:
+                continue
+            end = dt.datetime.strptime(dl, "%Y-%m-%d %H:%M:%S").date()
+        except Exception:
+            continue
+        if end < TODAY:
+            continue
+        reward = (c.get("reward") or "").strip()
+        if not reward or reward.lower() in ("knowledge", "swag", "certificates"):
+            continue  # 只收现金奖
+        out.append({
+            "title": c.get("title", c.get("ref", "")).strip(),
+            "platform": "Kaggle",
+            "url": c.get("url") or f"https://www.kaggle.com/competitions/{c.get('ref','')}",
+            "prize": reward,
+            "deadline": end.isoformat(),
+            "participants": c.get("teamCount"),
+            "kind": "competition",
+            "org": "Kaggle",
+            "note": "公开榜 · 奖金与规则以比赛页为准",
+        })
+    out.sort(key=lambda x: x["deadline"])
+    return out, errors
+
+# ----------------------------------------------------------------------------
 # 渲染
 # ----------------------------------------------------------------------------
 CSS = """
@@ -269,7 +323,8 @@ def fmt_participants(n):
 
 def platform_color(p):
     return {"Zindi": "#00e5ff", "DrivenData": "#ff2d78",
-            "DataFountain": "#ffb300", "PandaAI": "#b388ff"}.get(p, "#00ff9d")
+            "DataFountain": "#ffb300", "PandaAI": "#b388ff",
+            "Kaggle": "#20beff"}.get(p, "#00ff9d")
 
 def render(auto_items, source_errors, curated):
     now_str = dt.datetime.now().strftime("%Y-%m-%d %H:%M")
@@ -351,7 +406,7 @@ def render(auto_items, source_errors, curated):
 <div class="card" id="source-note" style="border-left:3px solid var(--cyan)">
 <h3>数据来源与转载声明</h3>
 <ul style="margin-left:18px">
-<li><b>自动采集来源</b>：Zindi 官方 API（api.zindi.africa）· DrivenData 公开列表页 · DataFountain 公开列表页 · PandaAI 官网。仅抓取公开发布的事实字段（名称 / 奖金 / 截止时间 / 参赛规模），不搬运正文内容。</li>
+<li><b>自动采集来源</b>：Zindi 官方 API（api.zindi.africa）· DrivenData 公开列表页 · DataFountain 公开列表页 · PandaAI 官网 · Kaggle 官方 API（账号授权）。仅抓取公开发布的事实字段（名称 / 奖金 / 截止时间 / 参赛规模），不搬运正文内容。</li>
 <li><b>人工情报来源</b>：各赛事主办方官网与官方微信公众号公开发布的信息（CCF / 华为 / 讯飞 / 魔搭 / 波克 / WorldQuant / 珠海市政府等），情报更新时间见页首。</li>
 <li><b>版权归属</b>：各赛事的名称、规则、素材与奖金信息的版权归主办方所有。本站所有条目均附<b>官方原文链接</b>，一切以官方页面为准；报名前请阅读各赛 Rules / Eligibility 条款。</li>
 <li><b>用途说明</b>：本页为公开信息的个人导航聚合，不用于商业转售。如需引用或转载本页内容，请注明原始赛事来源；如有主办方不希望被收录，可联系删除。</li>
@@ -372,7 +427,7 @@ def render(auto_items, source_errors, curated):
 
 <header>
   <h1>[ AI 竞赛导航 ] // AUTO-UPDATED</h1>
-  <div class="meta">自动采集：Zindi API · DrivenData · DataFountain · PandaAI ｜ 人工情报更新于 {cur_updated} ｜
+  <div class="meta">自动采集：Zindi API · DrivenData · DataFountain · PandaAI · Kaggle ｜ 人工情报更新于 {cur_updated} ｜
   本页数据生成时间：<b>{now_str}</b> ｜ <a href="#source-note" style="color:var(--amber)">来源与转载声明见页底</a></div>
   <div class="stats">
     <div class="stat"><b>{n_live}</b><span>自动源在途赛</span></div>
@@ -436,7 +491,8 @@ def main():
     for name, fn, use in [("Zindi", collect_zindi, True),
                           ("DrivenData", collect_drivendata, True),
                           ("DataFountain", collect_df, False),
-                          ("PandaAI", collect_pandaai, False)]:
+                          ("PandaAI", collect_pandaai, False),
+                          ("Kaggle", collect_kaggle, True)]:
         try:
             got, errs = fn()
             items.extend(got)
