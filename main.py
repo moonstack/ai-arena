@@ -224,7 +224,8 @@ def collect_kaggle():
             except Exception as e:
                 return [], [f"Kaggle: 读取 kaggle.json 失败 — {e}"]
     if not (user and key):
-        return [], ["Kaggle: 未配置凭据（~/.kaggle/kaggle.json 或 KAGGLE_USERNAME/KAGGLE_KEY）"]
+        print("[skip] Kaggle: 未配置凭据（~/.kaggle/kaggle.json 或 KAGGLE_USERNAME/KAGGLE_KEY），跳过（非异常）")
+        return [], []  # 未配凭据属于预期状态，不上报异常
     import base64
     auth = base64.b64encode(f"{user}:{key}".encode()).decode()
     raw = fetch("https://www.kaggle.com/api/v1/competitions/list?page=1",

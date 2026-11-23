@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-23T11:47:08",
+  "generated": "2026-11-23T11:54:11",
   "proxy": "http://127.0.0.1:7897",
   "items": [
     {
@@ -146,7 +146,5 @@
       "note": "在真实数据上角逐因子表现，全年奖池 120 万，永续赛制、随到随赛。 · 滚动赛制"
     }
   ],
-  "errors": [
-    "Kaggle: 未配置凭据（~/.kaggle/kaggle.json 或 KAGGLE_USERNAME/KAGGLE_KEY）"
-  ]
+  "errors": []
 }
