@@ -30,8 +30,8 @@ CTX = ssl.create_default_context()
 CTX.check_hostname = False
 CTX.verify_mode = ssl.CERT_NONE  # 部分代理链下证书校验会失败
 
-def fetch(url, use_proxy=True, timeout=30, headers=None):
-    """抓取 URL。use_proxy=True 时走 ARENA_PROXY（本地梯子），False 直连（国内站）。"""
+def fetch(url, use_proxy=True, timeout=30, headers=None, data=None):
+    """抓取 URL。use_proxy=True 时走 ARENA_PROXY（本地梯子），False 直连（国内站）。data 非空时 POST。"""
     handlers = []
     if use_proxy and PROXY:
         handlers.append({"http": PROXY, "https": PROXY})
@@ -41,7 +41,8 @@ def fetch(url, use_proxy=True, timeout=30, headers=None):
     hdrs = {"User-Agent": UA, "Accept-Language": "en,zh-CN;q=0.9"}
     if headers:
         hdrs.update(headers)
-    req = urllib.request.Request(url, headers=hdrs)
+    req = urllib.request.Request(url, headers=hdrs, data=data,
+                                  method="POST" if data else "GET")
     with opener.open(req, timeout=timeout) as r:
         return r.read().decode("utf-8", "replace")
 
@@ -274,6 +275,64 @@ def collect_kaggle():
     return out, errors
 
 # ----------------------------------------------------------------------------
+# 源 6: HackerOne（公开 GraphQL 匿名可查, 境外 → 走代理；无需凭据）
+# ----------------------------------------------------------------------------
+def collect_hackerone():
+    gql = "https://hackerone.com/graphql"
+    query = (
+        "query DirectoryQuery($cursor: String, $secureOrderBy: FiltersTeamFilterOrder, "
+        "$where: FiltersTeamFilterInput) { teams(first: 25, after: $cursor, "
+        "secure_order_by: $secureOrderBy, where: $where) { "
+        "pageInfo { endCursor hasNextPage __typename } "
+        "edges { node { id name handle resolved_report_count currency "
+        "base_bounty average_bounty_lower_amount average_bounty_upper_amount "
+        "launched_at submission_state __typename } __typename } __typename } }"
+    )
+    where = {"_and": [{"_or": [{"submission_state": {"_eq": "open"}}]}]}
+    cursor, out, errors = None, [], []
+    for _ in range(4):  # 最多 4 页×25 = 100 个项目
+        payload = json.dumps({
+            "operationName": "DirectoryQuery",
+            "variables": {"cursor": cursor, "where": where,
+                          "secureOrderBy": {"launched_at": {"_direction": "DESC"}}},
+            "query": query}).encode("utf-8")
+        raw = fetch(gql, use_proxy=True, timeout=30,
+                    headers={"Content-Type": "application/json"}, data=payload)
+        d = json.loads(raw)
+        teams = (d.get("data") or {}).get("teams") or {}
+        edges = teams.get("edges") or []
+        for e in edges:
+            n = e.get("node") or {}
+            min_b = n.get("base_bounty")
+            if not min_b or int(min_b) <= 0:
+                continue  # VDP/无赏金项目跳过
+            avg_lo = n.get("average_bounty_lower_amount")
+            avg_hi = n.get("average_bounty_upper_amount")
+            cur = (n.get("currency") or "usd").upper()
+            cur_sym = "$" if cur == "USD" else ("€" if cur == "EUR" else cur + " ")
+            prize = f"{cur_sym}{int(min_b):,} 起"
+            if avg_lo and avg_hi:
+                prize += f" · 均 {cur_sym}{int(avg_lo):,}-{int(avg_hi):,}"
+            out.append({
+                "title": (n.get("name") or n.get("handle") or "").strip(),
+                "platform": "HackerOne",
+                "url": f"https://hackerone.com/{n.get('handle','')}",
+                "prize": prize,
+                "deadline": None,  # 赏金项目长期开放
+                "participants": n.get("resolved_report_count"),
+                "kind": "bounty",
+                "org": "HackerOne",
+                "note": "漏洞赏金（持续开放）· 严格限定各项目 scope 内测试",
+            })
+        info = (teams.get("pageInfo") or {})
+        if not info.get("hasNextPage"):
+            break
+        cursor = info.get("endCursor")
+    if not out:
+        errors.append("HackerOne: GraphQL 未返回可解析数据")
+    return out, errors
+
+# ----------------------------------------------------------------------------
 # 渲染
 # ----------------------------------------------------------------------------
 CSS = """
@@ -339,7 +398,7 @@ def fmt_participants(n):
 def platform_color(p):
     return {"Zindi": "#00e5ff", "DrivenData": "#ff2d78",
             "DataFountain": "#ffb300", "PandaAI": "#b388ff",
-            "Kaggle": "#20beff"}.get(p, "#00ff9d")
+            "Kaggle": "#20beff", "HackerOne": "#ff6b5b"}.get(p, "#00ff9d")
 
 def render(auto_items, source_errors, curated):
     now_str = dt.datetime.now().strftime("%Y-%m-%d %H:%M")
@@ -425,7 +484,7 @@ def render(auto_items, source_errors, curated):
 <div class="card" id="source-note" style="border-left:3px solid var(--cyan)">
 <h3>数据来源与转载声明</h3>
 <ul style="margin-left:18px">
-<li><b>自动采集来源</b>：Zindi 官方 API（api.zindi.africa）· DrivenData 公开列表页 · DataFountain 公开列表页 · PandaAI 官网 · Kaggle 官方 API（账号授权）。仅抓取公开发布的事实字段（名称 / 奖金 / 截止时间 / 参赛规模），不搬运正文内容。</li>
+<li><b>自动采集来源</b>：Zindi 官方 API（api.zindi.africa）· DrivenData 公开列表页 · DataFountain 公开列表页 · PandaAI 官网 · Kaggle 官方 API（账号授权）· HackerOne 公开 GraphQL。仅抓取公开发布的事实字段（名称 / 奖金 / 截止时间 / 参赛规模），不搬运正文内容。</li>
 <li><b>人工情报来源</b>：各赛事主办方官网与官方微信公众号公开发布的信息（CCF / 华为 / 讯飞 / 魔搭 / 波克 / WorldQuant / 珠海市政府等），情报更新时间见页首。</li>
 <li><b>版权归属</b>：各赛事的名称、规则、素材与奖金信息的版权归主办方所有。本站所有条目均附<b>官方原文链接</b>，一切以官方页面为准；报名前请阅读各赛 Rules / Eligibility 条款。</li>
 <li><b>用途说明</b>：本页为公开信息的个人导航聚合，不用于商业转售。如需引用或转载本页内容，请注明原始赛事来源；如有主办方不希望被收录，可联系删除。</li>
@@ -446,7 +505,7 @@ def render(auto_items, source_errors, curated):
 
 <header>
   <h1>[ AI 竞赛导航 ] // AUTO-UPDATED</h1>
-  <div class="meta">自动采集：Zindi API · DrivenData · DataFountain · PandaAI · Kaggle ｜ 人工情报更新于 {cur_updated} ｜
+  <div class="meta">自动采集：Zindi API · DrivenData · DataFountain · PandaAI · Kaggle · HackerOne ｜ 人工情报更新于 {cur_updated} ｜
   本页数据生成时间：<b>{now_str}</b> ｜ <a href="#source-note" style="color:var(--amber)">来源与转载声明见页底</a></div>
   <div class="stats">
     <div class="stat"><b>{n_live}</b><span>自动源在途赛</span></div>
@@ -511,7 +570,8 @@ def main():
                           ("DrivenData", collect_drivendata, True),
                           ("DataFountain", collect_df, False),
                           ("PandaAI", collect_pandaai, False),
-                          ("Kaggle", collect_kaggle, True)]:
+                          ("Kaggle", collect_kaggle, True),
+                          ("HackerOne", collect_hackerone, True)]:
         try:
             got, errs = fn()
             items.extend(got)
