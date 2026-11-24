@@ -208,52 +208,66 @@ def collect_pandaai():
 
 # ----------------------------------------------------------------------------
 # 源 5: Kaggle（官方 API, 境外 → 走代理；需凭据）
-# 凭据优先级：环境变量 KAGGLE_USERNAME/KAGGLE_KEY（GitHub Actions Secrets）
-#            >  本机 ~/.kaggle/kaggle.json
+# 凭据优先级：环境变量 KAGGLE_API_TOKEN（GitHub Actions Secrets）
+#            >  本机 ~/.kaggle/access_token（新版 KGAT_ token）
+# 鉴权：Authorization: Bearer <token>
 # 无凭据时优雅跳过（不影响其余源）
 # ----------------------------------------------------------------------------
 def collect_kaggle():
-    user = os.environ.get("KAGGLE_USERNAME", "").strip()
-    key = os.environ.get("KAGGLE_KEY", "").strip()
-    if not (user and key):
-        kf = Path(os.path.expanduser("~/.kaggle/kaggle.json"))
+    tok = os.environ.get("KAGGLE_API_TOKEN", "").strip()
+    if not tok:
+        kf = Path(os.path.expanduser("~/.kaggle/access_token"))
         if kf.exists():
-            try:
-                j = json.loads(kf.read_text(encoding="utf-8"))
-                user, key = j.get("username", ""), j.get("key", "")
-            except Exception as e:
-                return [], [f"Kaggle: 读取 kaggle.json 失败 — {e}"]
-    if not (user and key):
-        print("[skip] Kaggle: 未配置凭据（~/.kaggle/kaggle.json 或 KAGGLE_USERNAME/KAGGLE_KEY），跳过（非异常）")
+            tok = kf.read_text(encoding="utf-8").strip()
+    if not tok:
+        print("[skip] Kaggle: 未配置凭据（~/.kaggle/access_token 或 KAGGLE_API_TOKEN），跳过（非异常）")
         return [], []  # 未配凭据属于预期状态，不上报异常
-    import base64
-    auth = base64.b64encode(f"{user}:{key}".encode()).decode()
-    raw = fetch("https://www.kaggle.com/api/v1/competitions/list?page=1",
-                use_proxy=True, headers={"Authorization": f"Basic {auth}"})
-    data = json.loads(raw)
-    out, errors = [], []
-    for c in data:
+    data = []
+    for page in (1, 2, 3):
         try:
-            dl = (c.get("deadline") or "").strip()
-            if not dl:
-                continue
-            end = dt.datetime.strptime(dl, "%Y-%m-%d %H:%M:%S").date()
+            raw = fetch(f"https://www.kaggle.com/api/v1/competitions/list?page={page}",
+                        use_proxy=True, headers={"Authorization": f"Bearer {tok}"})
+            data.extend(json.loads(raw))
+        except Exception as e:
+            if page == 1:
+                raise
+            break  # 后续页失败不致命
+    out, errors, seen = [], [], set()
+    for c in data:
+        cid = c.get("ref") or c.get("id")
+        if cid in seen:
+            continue
+        seen.add(cid)
+        dl = (c.get("deadline") or "").strip()
+        if not dl:
+            continue
+        try:
+            try:
+                end = dt.datetime.fromisoformat(dl.replace("Z", "+00:00")).date()
+            except ValueError:
+                end = dt.datetime.strptime(dl, "%Y-%m-%d %H:%M:%S").date()
         except Exception:
             continue
         if end < TODAY:
             continue
-        reward = (c.get("reward") or "").strip()
-        if not reward or reward.lower() in ("knowledge", "swag", "certificates"):
-            continue  # 只收现金奖
+        reward_raw = (c.get("reward") or "").strip()
+        mu = re.match(r"^([\d,.]+)\s*(Usd|USD)\b", reward_raw)
+        me = re.match(r"^([\d,.]+)\s*(Eur|EUR)\b", reward_raw)
+        if mu:
+            reward = "$" + mu.group(1)
+        elif me:
+            reward = "€" + me.group(1)
+        else:
+            continue  # Swag / Knowledge / 空 → 非现金奖,跳过
         out.append({
-            "title": c.get("title", c.get("ref", "")).strip(),
+            "title": (c.get("title") or c.get("ref") or "").strip(),
             "platform": "Kaggle",
             "url": c.get("url") or f"https://www.kaggle.com/competitions/{c.get('ref','')}",
             "prize": reward,
             "deadline": end.isoformat(),
             "participants": c.get("teamCount"),
             "kind": "competition",
-            "org": "Kaggle",
+            "org": (c.get("organizationName") or "Kaggle").strip() or "Kaggle",
             "note": "公开榜 · 奖金与规则以比赛页为准",
         })
     out.sort(key=lambda x: x["deadline"])

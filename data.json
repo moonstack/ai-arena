@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-24T08:00:57",
+  "generated": "2026-11-24T08:15:36",
   "proxy": "http://127.0.0.1:7897",
   "items": [
     {
@@ -12,6 +12,17 @@
       "kind": "hackathon",
       "org": "",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
+    },
+    {
+      "title": "Google - The Gemma 4 Developer Agent Competition",
+      "platform": "Kaggle",
+      "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent",
+      "prize": "$75,000",
+      "deadline": "2026-12-02",
+      "participants": 6591,
+      "kind": "competition",
+      "org": "Google DeepMind",
+      "note": "公开榜 · 奖金与规则以比赛页为准"
     },
     {
       "title": "The Geologic Enhanced Mapping System (GEMS) Prize Challenge",
@@ -30,7 +41,7 @@
       "url": "https://zindi.africa/competitions/GenAI-for-Good-Challenge",
       "prize": "$40 000 USD",
       "deadline": "2026-12-13",
-      "participants": 734,
+      "participants": 735,
       "kind": "competition",
       "org": "IEEE Humanitarian Technologies x UNDP",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -80,6 +91,39 @@
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
     },
     {
+      "title": "Enveda CASMI 2026 - Molecule ID From Mass Spectra",
+      "platform": "Kaggle",
+      "url": "https://www.kaggle.com/competitions/enveda-CASMI26-molecule-id-mass-spectra",
+      "prize": "$50,000",
+      "deadline": "2026-12-14",
+      "participants": 5877,
+      "kind": "competition",
+      "org": "Enveda",
+      "note": "公开榜 · 奖金与规则以比赛页为准"
+    },
+    {
+      "title": "Google - Agent Harness on Physical-Engineering's Last Exam",
+      "platform": "Kaggle",
+      "url": "https://www.kaggle.com/competitions/physical-engineerings-last-exam",
+      "prize": "$400,000",
+      "deadline": "2027-01-05",
+      "participants": 85,
+      "kind": "competition",
+      "org": "Google",
+      "note": "公开榜 · 奖金与规则以比赛页为准"
+    },
+    {
+      "title": "NFL Big Data Bowl 2027",
+      "platform": "Kaggle",
+      "url": "https://www.kaggle.com/competitions/nfl-big-data-bowl-2027",
+      "prize": "$100,000",
+      "deadline": "2027-01-06",
+      "participants": 711,
+      "kind": "competition",
+      "org": "The National Football League",
+      "note": "公开榜 · 奖金与规则以比赛页为准"
+    },
+    {
       "title": "TelcoRetrieve Challenge: Unlocking Telco Knowledge",
       "platform": "Zindi",
       "url": "https://zindi.africa/competitions/telcoretrieve-challenge-unlocking-telco-knowledge",
@@ -89,6 +133,39 @@
       "kind": "competition",
       "org": "ITU",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
+    },
+    {
+      "title": "Name That LLM",
+      "platform": "Kaggle",
+      "url": "https://www.kaggle.com/competitions/name-that-llm",
+      "prize": "$50,000",
+      "deadline": "2027-01-14",
+      "participants": 6879,
+      "kind": "competition",
+      "org": "Kaggle",
+      "note": "公开榜 · 奖金与规则以比赛页为准"
+    },
+    {
+      "title": "Google Quantum AI - Verifiable Quantum Circuit Compilation",
+      "platform": "Kaggle",
+      "url": "https://www.kaggle.com/competitions/google-verifiable-quantum-circuit-compilation",
+      "prize": "$150,000",
+      "deadline": "2027-01-20",
+      "participants": 3649,
+      "kind": "competition",
+      "org": "Google Quantum AI",
+      "note": "公开榜 · 奖金与规则以比赛页为准"
+    },
+    {
+      "title": "Santa 2026 - The Elf Calculator",
+      "platform": "Kaggle",
+      "url": "https://www.kaggle.com/competitions/santa-2026",
+      "prize": "$50,000",
+      "deadline": "2027-01-28",
+      "participants": 2734,
+      "kind": "competition",
+      "org": "Kaggle",
+      "note": "公开榜 · 奖金与规则以比赛页为准"
     },
     {
       "title": "AI Agents for RAN Challenge",
@@ -122,6 +199,28 @@
       "kind": "competition",
       "org": "",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
+    },
+    {
+      "title": "Generalist Gaming Agent",
+      "platform": "Kaggle",
+      "url": "https://www.kaggle.com/competitions/generalist-gaming-agent",
+      "prize": "$50,000",
+      "deadline": "2027-03-01",
+      "participants": 0,
+      "kind": "competition",
+      "org": "GARC (Generalist Agent Research Collective)",
+      "note": "公开榜 · 奖金与规则以比赛页为准"
+    },
+    {
+      "title": "Squares in Squares",
+      "platform": "Kaggle",
+      "url": "https://www.kaggle.com/competitions/squares-in-squares",
+      "prize": "$50,000",
+      "deadline": "2027-07-18",
+      "participants": 2430,
+      "kind": "competition",
+      "org": "Kaggle",
+      "note": "公开榜 · 奖金与规则以比赛页为准"
     },
     {
       "title": "巅峰交易者 · 全国期货模拟赛",
