@@ -24,6 +24,7 @@ jobs:
         run: python main.py
         env:
           ARENA_PROXY: ''    # GitHub runner 在境外,直连即可,无需代理
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
 
       - name: Commit & Push
         run: |
