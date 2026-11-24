@@ -1,4 +1,4 @@
-{
+﻿{
   "updated": "2026-11-11",
   "_comment": "人工维护数据：自动采集抓不到的国内赛事（公众号发布类）、永续平台、避坑观察、明年日历。由 AI 或人工定期更新。",
   "windows": [
@@ -28,7 +28,7 @@
     },
     {
       "title": "2026 波克 AI 游戏创作大赛（BOKE NEW WAVE）",
-      "url": "https://mp.weixin.qq.com/s?__biz=MjM5NjUwNzg4Mg==&mid=2702242671&idx=2&sn=92ed1e5a725c4ae3c8eb5f435898e630",
+      "url": "https://www.boke.com/",
       "deadline": null,
       "prize": "入围30强每队最高6000元Token补贴 + 决赛奖金",
       "tags": ["AI游戏", "文旅/教育题材", "青年向"],
