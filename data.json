@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-24T10:14:19",
+  "generated": "2026-11-25T08:58:21",
   "proxy": "(direct)",
   "items": [
     {
@@ -8,7 +8,7 @@
       "url": "https://zindi.africa/competitions/climate-risk-health-prediction-cmu-hackathon",
       "prize": "3000 Points",
       "deadline": "2026-11-27",
-      "participants": 79,
+      "participants": 100,
       "kind": "hackathon",
       "org": "",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -19,7 +19,7 @@
       "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent",
       "prize": "$75,000",
       "deadline": "2026-12-02",
-      "participants": 6623,
+      "participants": 6686,
       "kind": "competition",
       "org": "Google DeepMind",
       "note": "公开榜 · 奖金与规则以比赛页为准"
@@ -30,7 +30,7 @@
       "url": "https://www.drivendata.org/competitions/306/competition-doe-gems/",
       "prize": "$300,000",
       "deadline": "2026-12-03",
-      "participants": 1175,
+      "participants": 1196,
       "kind": "prize",
       "org": "DrivenData",
       "note": "公益数据科学赛 · 注意个别赛为美国联邦资助(如 American-Made 系列)需自查资格"
@@ -41,7 +41,7 @@
       "url": "https://zindi.africa/competitions/GenAI-for-Good-Challenge",
       "prize": "$40 000 USD",
       "deadline": "2026-12-13",
-      "participants": 742,
+      "participants": 764,
       "kind": "competition",
       "org": "IEEE Humanitarian Technologies x UNDP",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -52,7 +52,7 @@
       "url": "https://zindi.africa/competitions/french-embassy-underwater-vessel-noise-challenge",
       "prize": "$5 000 USD",
       "deadline": "2026-12-13",
-      "participants": 1367,
+      "participants": 1390,
       "kind": "competition",
       "org": "",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -63,7 +63,7 @@
       "url": "https://zindi.africa/competitions/hotosm-african-highway-segmentation",
       "prize": "$2 500 USD",
       "deadline": "2026-12-13",
-      "participants": 364,
+      "participants": 399,
       "kind": "competition",
       "org": "",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -74,7 +74,7 @@
       "url": "https://zindi.africa/competitions/frugal-tonal-asr-challenge-for-fongbe",
       "prize": "$5 000 USD",
       "deadline": "2026-12-13",
-      "participants": 441,
+      "participants": 489,
       "kind": "competition",
       "org": "",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -85,7 +85,7 @@
       "url": "https://zindi.africa/competitions/dischem-product-data-entichment-challenge",
       "prize": "$5 000 USD",
       "deadline": "2026-12-13",
-      "participants": 458,
+      "participants": 500,
       "kind": "competition",
       "org": "",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -96,7 +96,7 @@
       "url": "https://www.kaggle.com/competitions/enveda-CASMI26-molecule-id-mass-spectra",
       "prize": "$50,000",
       "deadline": "2026-12-14",
-      "participants": 5901,
+      "participants": 5963,
       "kind": "competition",
       "org": "Enveda",
       "note": "公开榜 · 奖金与规则以比赛页为准"
@@ -107,7 +107,7 @@
       "url": "https://www.kaggle.com/competitions/physical-engineerings-last-exam",
       "prize": "$400,000",
       "deadline": "2027-01-05",
-      "participants": 89,
+      "participants": 96,
       "kind": "competition",
       "org": "Google",
       "note": "公开榜 · 奖金与规则以比赛页为准"
@@ -118,7 +118,7 @@
       "url": "https://www.kaggle.com/competitions/nfl-big-data-bowl-2027",
       "prize": "$100,000",
       "deadline": "2027-01-06",
-      "participants": 718,
+      "participants": 728,
       "kind": "competition",
       "org": "The National Football League",
       "note": "公开榜 · 奖金与规则以比赛页为准"
@@ -129,7 +129,7 @@
       "url": "https://zindi.africa/competitions/telcoretrieve-challenge-unlocking-telco-knowledge",
       "prize": "€25 000 EUR",
       "deadline": "2027-01-13",
-      "participants": 542,
+      "participants": 564,
       "kind": "competition",
       "org": "ITU",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -140,7 +140,7 @@
       "url": "https://www.kaggle.com/competitions/name-that-llm",
       "prize": "$50,000",
       "deadline": "2027-01-14",
-      "participants": 6924,
+      "participants": 7035,
       "kind": "competition",
       "org": "Kaggle",
       "note": "公开榜 · 奖金与规则以比赛页为准"
@@ -151,7 +151,7 @@
       "url": "https://www.kaggle.com/competitions/google-verifiable-quantum-circuit-compilation",
       "prize": "$150,000",
       "deadline": "2027-01-20",
-      "participants": 3660,
+      "participants": 3702,
       "kind": "competition",
       "org": "Google Quantum AI",
       "note": "公开榜 · 奖金与规则以比赛页为准"
@@ -162,7 +162,7 @@
       "url": "https://www.kaggle.com/competitions/santa-2026",
       "prize": "$50,000",
       "deadline": "2027-01-28",
-      "participants": 2815,
+      "participants": 2996,
       "kind": "competition",
       "org": "Kaggle",
       "note": "公开榜 · 奖金与规则以比赛页为准"
@@ -173,7 +173,7 @@
       "url": "https://zindi.africa/competitions/ai-agents-for-ran-challenge",
       "prize": "€30 000 EUR",
       "deadline": "2027-02-05",
-      "participants": 286,
+      "participants": 302,
       "kind": "competition",
       "org": "ITU",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -184,7 +184,7 @@
       "url": "https://zindi.africa/competitions/green-rising-methane-innovation-challenge",
       "prize": "$10 000 USD",
       "deadline": "2027-02-14",
-      "participants": 348,
+      "participants": 355,
       "kind": "competition",
       "org": "",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -195,7 +195,7 @@
       "url": "https://zindi.africa/competitions/amd-global-physical-ai-safety-challenge",
       "prize": "$10 000 USD",
       "deadline": "2027-02-14",
-      "participants": 533,
+      "participants": 550,
       "kind": "competition",
       "org": "",
       "note": "公开榜 · 规则页确认 Eligibility（个别赛限国别）"
@@ -206,7 +206,7 @@
       "url": "https://www.kaggle.com/competitions/generalist-gaming-agent",
       "prize": "$50,000",
       "deadline": "2027-03-01",
-      "participants": 59,
+      "participants": 238,
       "kind": "competition",
       "org": "GARC (Generalist Agent Research Collective)",
       "note": "公开榜 · 奖金与规则以比赛页为准"
@@ -217,7 +217,7 @@
       "url": "https://www.kaggle.com/competitions/squares-in-squares",
       "prize": "$50,000",
       "deadline": "2027-07-18",
-      "participants": 2442,
+      "participants": 2470,
       "kind": "competition",
       "org": "Kaggle",
       "note": "公开榜 · 奖金与规则以比赛页为准"
@@ -248,7 +248,7 @@
       "title": "Coupang",
       "platform": "HackerOne",
       "url": "https://hackerone.com/coupang",
-      "prize": "$50 起 · 均 $490-572",
+      "prize": "$50 起 · 均 $490-559",
       "deadline": null,
       "participants": 98,
       "kind": "bounty",
@@ -272,7 +272,7 @@
       "url": "https://hackerone.com/live_nation",
       "prize": "$50 起 · 均 $500-2,000",
       "deadline": null,
-      "participants": 116,
+      "participants": 118,
       "kind": "bounty",
       "org": "HackerOne",
       "note": "漏洞赏金（持续开放）· 严格限定各项目 scope 内测试"
@@ -283,7 +283,7 @@
       "url": "https://hackerone.com/vercel",
       "prize": "$50 起 · 均 $1,198-1,500",
       "deadline": null,
-      "participants": 365,
+      "participants": 367,
       "kind": "bounty",
       "org": "HackerOne",
       "note": "漏洞赏金（持续开放）· 严格限定各项目 scope 内测试"
@@ -292,9 +292,9 @@
       "title": "d-you App & German EUDI Wallet Ecosystem",
       "platform": "HackerOne",
       "url": "https://hackerone.com/common_codes",
-      "prize": "$50 起 · 均 $4,000-4,000",
+      "prize": "$50 起 · 均 $3,000-3,000",
       "deadline": null,
-      "participants": 3,
+      "participants": 5,
       "kind": "bounty",
       "org": "HackerOne",
       "note": "漏洞赏金（持续开放）· 严格限定各项目 scope 内测试"
@@ -349,7 +349,7 @@
       "url": "https://hackerone.com/anthropic",
       "prize": "$50 起 · 均 $600-1,200",
       "deadline": null,
-      "participants": 537,
+      "participants": 541,
       "kind": "bounty",
       "org": "HackerOne",
       "note": "漏洞赏金（持续开放）· 严格限定各项目 scope 内测试"
@@ -404,7 +404,7 @@
       "url": "https://hackerone.com/clear",
       "prize": "$100 起 · 均 $200-250",
       "deadline": null,
-      "participants": 101,
+      "participants": 103,
       "kind": "bounty",
       "org": "HackerOne",
       "note": "漏洞赏金（持续开放）· 严格限定各项目 scope 内测试"
@@ -426,7 +426,7 @@
       "url": "https://hackerone.com/twilio",
       "prize": "$50 起 · 均 $200-300",
       "deadline": null,
-      "participants": 3119,
+      "participants": 3121,
       "kind": "bounty",
       "org": "HackerOne",
       "note": "漏洞赏金（持续开放）· 严格限定各项目 scope 内测试"
@@ -536,7 +536,7 @@
       "url": "https://hackerone.com/dyson",
       "prize": "$100 起 · 均 $200-400",
       "deadline": null,
-      "participants": 866,
+      "participants": 867,
       "kind": "bounty",
       "org": "HackerOne",
       "note": "漏洞赏金（持续开放）· 严格限定各项目 scope 内测试"
